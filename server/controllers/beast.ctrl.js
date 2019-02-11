@@ -78,7 +78,7 @@ module.exports = {
         req.files.image.path, //1st param is the file path
         (result) => {
             let newbb = { region, type, name, location, lat, lng, description, contactId,
-              image: result.url != null ? result.url : '' ,
+              image: result.secure_url != null ? result.secure_url : '' ,
               buy:isBuy,
               rent:isRent
             }
@@ -100,7 +100,7 @@ module.exports = {
     }
 
     function saveBeast(newbb) {
-      if (!newbb.location.length ) {
+      if (!newbb.location || !newbb.location.length ) {
 // locaiton is not provided, don't bother with geocoder
         new Beast(newbb).save((err, beast) => {
             if (err)
@@ -149,7 +149,7 @@ module.exports = {
       cloudinary.uploader.upload(
         req.files.image.path, //1st param is the file path
         (result) => {
-          newbb = {...req.body, image: result.url != null ? result.url : '' }
+          newbb = {...req.body, image: result.secure_url != null ? result.secure_url : '' }
           updateBB(newbb);
         }, //2nd param is a callback
         { resource_type: 'image',
@@ -164,7 +164,7 @@ module.exports = {
     // next(); comment out coz it's causing multiple res.send
 /*----------------------*/
     function updateBB(newbb){
-      if (!newbb.location.length ) {
+      if (!newbb.location || !newbb.location.length ) {
 // locaiton is not provided, don't bother with geocoder
         Beast.findOneAndUpdate(query, newbb, {new:true},
           (err, updatedBeast)=>{

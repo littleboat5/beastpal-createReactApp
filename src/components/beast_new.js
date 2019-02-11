@@ -28,7 +28,7 @@ class BeastNew extends Component {
       description: document.getElementById('description').value,
       contactId: this.props.user.user._id
     }
-console.log("buy"+values.buy+" rent"+values.rent)
+// console.log("buy"+values.buy+" rent"+values.rent)
     let formdata = new FormData();
     formdata.append('image', values.image);
     formdata.append('region', values.region);

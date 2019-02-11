@@ -11,8 +11,9 @@ class Banner extends Component {
     return (
       <div id="banner"  className="jumbotron">
           <div className='container'>
-            <h1>A beast of burden is your best pal in the wild</h1>
-            <p>Find a beast to carry your burden in your next wild adventure!</p>
+            <h1>A beast is your best pal in the wild</h1>
+            <h5>Find a beast to carry your burden in your next wild adventure!</h5>
+            <br/>
             <Link to={"beasts/new"}>
               <button className={this.props.isAuth ? "btn btn-success" : "btn btn-success disabled"} >
                   Register Beast</button>

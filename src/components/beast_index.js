@@ -44,7 +44,7 @@ class BeastIndex extends Component {
 
     function onClickLess(){
       //show less description
-      document.getElementById(`bob-description${bob._id}`).innerHTML = bob.description.substring(0, 10);
+      document.getElementById(`bob-description${bob._id}`).innerHTML = bob.description.substring(0, 25);
       //hide the "-" link
       document.getElementById(`bob-less${bob._id}`).classList.add('hidden');
       //show the "...+" link
@@ -59,11 +59,11 @@ class BeastIndex extends Component {
             <strong>{bob.name}</strong>, a {bob.type} from {bob.region}
             <br/>
             <span id={`bob-description${bob._id}`}>
-              {bob.description ? bob.description.substring(0, 10) : ""}
+              {bob.description ? bob.description.substring(0, 25) : ""}
             </span>
     {/* ...+ OR - */}
             <button id={`bob-more${bob._id}`}
-                  className={(bob.description && bob.description.length>10)
+                  className={(bob.description && bob.description.length>25)
                            ? "text-info " : "text-info hidden" }
                   onClick={onClickMore.bind(this)} >
                 <i className="fas fa-ellipsis-h"></i>

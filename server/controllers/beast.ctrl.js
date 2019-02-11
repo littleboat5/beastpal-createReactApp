@@ -187,7 +187,7 @@ module.exports = {
               // newbb.lat = data[0].latitude;
               // newbb.lng = data[0].longitude;
             newbb.location = data[0].formattedAddress;
-            newbb = {...req.body, lat:data[0].latitude, lng:data[0].longitude }
+            newbb = {...newbb, lat:data[0].latitude, lng:data[0].longitude }
           }
 
           Beast.findOneAndUpdate(query, newbb, {new:true},

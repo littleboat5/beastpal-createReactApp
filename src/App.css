@@ -2,6 +2,9 @@
     padding-bottom: 20px;
     font-family: 'Sarabun', sans-serif;
 }
+#root.loading {
+  cursor: wait;
+}
 .icon-brand{
   width: 40px;
   height:40px;

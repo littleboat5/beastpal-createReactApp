@@ -16,6 +16,9 @@ class BeastIndex extends Component {
   }
 /*=============================================*/
   componentDidMount(){
+// change the cursor to a spinning wheel
+    document.getElementById('root').classList.add('loading');
+
     this.props.loadBeasts();
   }
 
@@ -83,6 +86,10 @@ class BeastIndex extends Component {
 /*=============================================*/
 
   render(){
+    //change the curson back to its normal pointer form
+    if(this.props.beasts && this.props.beasts.length > 0 )
+      document.getElementById('root').classList.remove('loading');
+
     return (
       <div>
         <Banner />

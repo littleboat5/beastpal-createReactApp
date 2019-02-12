@@ -8,11 +8,12 @@ regions: Mongolia, Andes, Tibet, Sahara, Pamir, Taklamakan
 - Front-end: [React.js](https://reactjs.org), [Redux](https://redux.js.org)
 - API Server: [Node.js](https://nodejs.org), [Express.js](https://expressjs.com)
 - Database: [MongoDB](https://mongodb.com)
-- Other: [create-react-app](https://github.com/facebook/create-react-app)
+- Other: [create-react-app](https://github.com/facebook/create-react-app), [Bootstrap](https://getbootstrap.com)
 
 ## Features
 - Google Sign-in
 - Add beasts to the inventory
+- Picture upload
 - Google map geocoding the serving location of the beast
 - View all beasts
 - View details of 1 beast
